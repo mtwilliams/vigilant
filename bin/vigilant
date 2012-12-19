@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.dirname(__FILE__) + "/../lib"
+
+require "rubygems"
+require "gli"
+require "vigilant"
+require "vigilant/cli"
+
+version Vigilant::version
+
+desc "Generate unit test file"
+long_desc "Generate C/C++ unit testing file from a Vigilant config file"
+command :gen do |c|
+  c.action do |global_options, options, args|
+    file = args.first
+    Vigilant::CLI.gen(file, options)
+  end
+end
+
+pre { |global, command, options, args| true }
+post {|global, command, options, args| true }
+
+on_error do |exception|
+  puts exception
+  puts exception.backtrace
+end
+
+exit GLI.run(ARGV)

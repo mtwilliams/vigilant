@@ -1,0 +1,13 @@
+Vigilant::Test.new do |test|
+  test.prior_to <<-PRIOR_TO
+PRIOR_TO
+
+  test.run <<-RUN
+  assert("Hello, World!");
+  assert_equal(2 + 2, 4);
+  assert_not_equal(42, 42);
+RUN
+
+  test.after <<-AFTER
+AFTER
+end
