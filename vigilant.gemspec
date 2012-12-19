@@ -13,7 +13,8 @@ Gem::Specification.new do |spec|
 
   spec.rubyforge_project = "vigilant"
 
-  spec.add_development_dependency "bundler", "~>1.0"
+  spec.add_dependency "gli", "~> 2.5.2"
+  spec.add_development_dependency "bundler", "~> 1.0"
 
   spec.files         = `git ls-files`.split("\n")
   spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

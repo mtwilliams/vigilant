@@ -6,7 +6,8 @@ require "gli"
 require "vigilant"
 require "vigilant/cli"
 
-version Vigilant::version
+include GLI::App
+version Vigilant::VERSION
 
 desc "Generate unit test file"
 long_desc "Generate C/C++ unit testing file from a Vigilant config file"
@@ -33,4 +34,4 @@ on_error do |exception|
   puts exception.backtrace
 end
 
-exit GLI.run(ARGV)
+exit run(ARGV)
