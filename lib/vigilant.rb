@@ -2,7 +2,7 @@ require 'json'
 require 'vigilant/test'
 
 class Vigilant
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 
   attr_reader :num_tests
 

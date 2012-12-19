@@ -17,6 +17,14 @@ command :gen do |c|
   end
 end
 
+desc "Generate a vigilant.options file"
+long_desc "Generate a template vigilant.options file"
+command :template do |c|
+  c.action do |global_options, options, args|
+    Vigilant::CLI.template("vigilant.options")
+  end
+end
+
 pre { |global, command, options, args| true }
 post {|global, command, options, args| true }
 

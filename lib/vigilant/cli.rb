@@ -1,10 +1,10 @@
 class Vigilant
   class CLI
-    def self.doc( file, options )
+    def self.gen( file, options )
       Vigilant.new(file).generate_tests
     end
 
-    def self.gen( file )
+    def self.template( file )
 temp = <<-TEMPLATE
 {
  "output": "run_tests.c"
